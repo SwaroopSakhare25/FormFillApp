@@ -45,8 +45,9 @@ jobs:
       image_tag: ${{ steps.set_output.outputs.image_tag }}
 
     steps:
-    #- name: Checkout code
-    #  uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Show directory contents
       run: ls -laR
 
