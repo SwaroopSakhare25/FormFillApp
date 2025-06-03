@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-artifacts
-        path: target/*.war
+        path: /home/runner/work/FormFillApp/FormFillApp/webapp/target/*.war
