@@ -80,7 +80,7 @@ jobs:
     - name: Build Docker image
       uses: docker/build-push-action@v6
       with:
-        context: FormFillApp/Dockerfile
+        context: .
         push: true
         tags: ${{ steps.metadata.outputs.tags }}
         labels: ${{ steps.metadata.outputs.labels }}
