@@ -91,7 +91,7 @@ jobs:
       id: set_output
       run: echo "image_tag=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
 
-  Update k8's deployment:
+  Update_k8s_deployment:
     name: Update K8's Update_k8's_deployment
     runs-on: ubuntu-latest
     needs: docker_build_and_push
