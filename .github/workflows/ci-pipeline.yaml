@@ -5,8 +5,8 @@ on:
   push:
     branches:
     - ci-pipeline
-  paths-ignore:
-  - regapp-deploy.yml
+    paths-ignore:
+    - regapp-deploy.yml
   pull_request:
     branches:
     - ci-pipeline
