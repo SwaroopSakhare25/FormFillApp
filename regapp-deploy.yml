@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: valaxy/regapp
+        image: ghcr.io/SwaroopSakhare25/FormFillApp:sha-26beca9479482742ba76bda253e7b663a9b11623 valaxy/regapp
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
