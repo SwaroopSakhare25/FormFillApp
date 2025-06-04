@@ -6,7 +6,7 @@ on:
     branches:
     - ci-pipeline
   paths-ignore:
-    - regapp-deploy.yml
+  - regapp-deploy.yml
   pull_request:
     branches:
     - ci-pipeline
@@ -105,27 +105,25 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "action@github.com"
-      
+
     - name: Update Kubernetes deployment file
       env:
         IMAGE_TAG: sha-${{ github.sha }}
         GITHUB_REPOSITORY: ${{ github.repository }}
         REGISTRY: ghcr.io
       run: |
-      # define the Image tag
-      NEW_IMAGE=${REGISTRY}/${GITHUB_REPOSITORY}:${IMAGE_TAG}
+        # define the Image tag
+        NEW_IMAGE=${REGISTRY}/${GITHUB_REPOSITORY}:${IMAGE_TAG}
 
-      # Update the image in the deployment file
-      sed -i "s|image: * |image: ${NEW_IMAGE} |" regapp-deploy.yml
+        # Update the image in the deployment file
+        sed -i "s|image: * |image: ${NEW_IMAGE} |" regapp-deploy.yml
 
-      # Verify the changes in deployment file
-      echo "Updated deploymet to use image: ${NEW_IMAGE}"
-      grep -A 1 "image:" regapp-deploy.yml
+        # Verify the changes in deployment file
+        echo "Updated deploymet to use image: ${NEW_IMAGE}"
+        grep -A 1 "image:" regapp-deploy.yml
 
     - name: Commit and Push changes
       run: |
         git add regapp-deploy.yml
         git commit -m " Update deployment file with new image tag ${IMAGE_TAG} [skip ci]" || echo "No changes to commit"  
         git push origin ci-pipeline
-
-
