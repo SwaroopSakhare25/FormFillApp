@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: ghcr.io/swaroopsakhare25/FormFillApp:sha-26beca9479482742ba76bda253e7b663a9b11623 
+        image: ghcr.io/swaroopsakhare25/formfillapp:sha-26beca9479482742ba76bda253e7b663a9b11623 
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
