@@ -22,6 +22,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: ghcr-creds
   strategy:
     type: RollingUpdate
     rollingUpdate:
