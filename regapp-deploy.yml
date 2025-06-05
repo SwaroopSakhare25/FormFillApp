@@ -16,6 +16,9 @@ spec:
       labels:
         app: regapp
     spec:
+      imagePullSecrets:
+      - name: ghcr-creds
+
       containers:
       - name: regapp
         image: ghcr.io/swaroopsakhare25/formfillapp:sha-26beca9479482742ba76bda253e7b663a9b11623 
